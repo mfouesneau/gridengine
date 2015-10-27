@@ -51,9 +51,12 @@ Modules:
 
 # global serializer
 try:
-  import dill as serializer
+    import dill as serializer
 except ImportError:
-  import cPickle as serializer
+    try:
+        import cPickle as serializer
+    except:
+        import pickle as serializer
 
 # import commonly used names for convenience
 # gridengine is not large enough to warrant module imports
