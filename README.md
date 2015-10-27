@@ -9,6 +9,7 @@ Main changes:
 
 * runs with python 3
 * starts jobs in the current directory
+* lambda functions are usable (limited support)
 * options
 
 Introduction
