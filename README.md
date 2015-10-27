@@ -68,7 +68,7 @@ Installation
 ------------
 Get gridengine from [github](https://github.com/hbristow/gridengine) and install using pip:
 
-    pip install git+https://github.com/hbristow/gridengine
+    pip install git+https://github.com/mfouesneau/gridengine
 
 This will automatically pull and build the dependencies.
 
