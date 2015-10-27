@@ -66,11 +66,18 @@ Features
 
 Installation
 ------------
-Get gridengine from [github](https://github.com/hbristow/gridengine) and install using pip:
+Get gridengine from [github](https://github.com/mfouesneau/gridengine) and install using pip:
 
     pip install git+https://github.com/mfouesneau/gridengine
 
 This will automatically pull and build the dependencies.
+
+You may also need to declare where to find the DRMAA library
+
+```
+# library for SGE
+export DRMAA_LIBRARY_PATH=/apps/sgeadmin/sge/GE2011.11p1/lib/linux-x64/libdrmaa.so
+```
 
 Example
 -------
