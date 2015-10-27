@@ -15,6 +15,7 @@ class TimeoutError(Exception):
 # ----------------------------------------------------------------------------
 class Scheduler(object):
     """A generic scheduler interface"""
+
     def schedule(self, submission_host, job_queue, **kwargs):
         raise NotImplementedError()
 
@@ -115,9 +116,9 @@ class GridEngineScheduler(Scheduler):
         Resources: dict
             to be passed to the -l command of qsub.
             e.g.:
-                h_cpu: maximum time expressed in format '02:00:00' (2 hours)
-                h_vmem: maximum memory allocation before job is killed in format '10G' (10GB)
-                virtual_free: memory free on host BEFORE job can be allocated
+            h_cpu: maximum time expressed in format '02:00:00' (2 hours)
+            h_vmem: maximum memory allocation before job is killed in format '10G' (10GB)
+            virtual_free: memory free on host BEFORE job can be allocated
         """
         import drmaa
         self.drmaa = drmaa
@@ -146,13 +147,12 @@ class GridEngineScheduler(Scheduler):
             the address of the submission host (job.JobDispatcher.address)
         job_queue: dict
             the dict of {jobid, job.Job} items to run
-
         Resources: dict
             to be passed to the -l command of qsub. These override any
             arguments that were given to the constructor. e.g.
-                h_cpu: maximum time expressed in format '02:00:00' (2 hours)
-                h_vmem: maximum memory allocation before job is killed in format '10G' (10GB)
-                virtual_free: memory free on host BEFORE job can be allocated
+            h_cpu: maximum time expressed in format '02:00:00' (2 hours)
+            h_vmem: maximum memory allocation before job is killed in format '10G' (10GB)
+            virtual_free: memory free on host BEFORE job can be allocated
         """
 
         # dont spin up the scheduler if there's nothing to do

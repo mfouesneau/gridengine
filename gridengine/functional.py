@@ -88,9 +88,12 @@ def map(f, args, scheduler=schedulers.best_available, reraise=True):
     """Perform a functional-style map operation
 
     Apply a function f to each argument in the iterable args. This is equivalent to
+
+    >>> f = lambda x: x
+        args = range(100)
         y = [f(x) for x in args]
-    or
         y = map(f, args)
+
     except that each argument in the iterable is assigned to a separate Job
     and scheduled to run via the scheduler.
 
@@ -119,8 +122,8 @@ def map(f, args, scheduler=schedulers.best_available, reraise=True):
     Raises
     ------
         Any exception that would occur when applying [f(x) for x in args]
-    """
 
+    """
     # setup the dispatcher
     dispatcher = dispatch.JobDispatcher(scheduler)
 

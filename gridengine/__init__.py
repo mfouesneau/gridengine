@@ -15,6 +15,8 @@ are handled by gridengine.
 
 The component layout of gridengine can be visualized as follows:
 
+.. code::
+
             |       JobDispatcher  ------>  Scheduler
     Host    |           /\                    /
             |          /  \                  /
@@ -47,6 +49,7 @@ Modules:
   functional: provides a distributed 'map' function
   settings: settings that control the global behaviour of gridengine
   example: example usage of gridengine.functional.map
+
 """
 
 # global serializer
